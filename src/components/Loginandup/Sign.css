@@ -1,0 +1,389 @@
+.weight{
+  font-size: 18px;
+  font-weight: 600;
+}
+.inputField {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputField input {
+  display: block;
+  width: 350px;
+  outline: none;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px 0;
+  background-color: lightgray;
+}
+
+#signup {
+  width: 300px;
+  /* margin-left: 20px; */
+  border-radius: 20px !important;
+}
+
+.text {
+  display: flex;
+  color: rgb(17, 17, 240);
+  text-decoration: underline;
+  float: right;
+}
+
+.shadow-lg {
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.password-input-wrapper {
+  position: relative;
+  width: 350px;
+}
+
+.password-input-wrapper input {
+  width: 100%;
+  padding-right: 40px; /* Make room for the icon */
+}
+
+.password-toggle-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: black;
+  font-size: 18px;
+}
+.passwordIcon input{
+  padding-left: 35px; /* Make room for the icon */
+}
+
+.password-icon {
+  position: absolute;
+  top: 47%;
+  left: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: rgba(0,0,0,0.2);
+  font-size: 18px;
+}
+.email-input-wrapper {
+  position: relative;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email-input-wrapper input {
+  width: 100%;
+  padding-left: 35px; /* Make room for the icon */
+}
+
+.email-toggle-icon {
+  position: absolute;
+  top: 47%;
+  left: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: rgba(0,0,0,0.2);
+  font-size: 20px;
+}
+.firstlastName-input-wrapper {
+  position: relative;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.firstlastName-input-wrapper input {
+  width: 100%;
+  padding-left: 35px; /* Make room for the icon */
+}
+
+.firstlastName-toggle-icon {
+  position: absolute;
+  top: 47%;
+  left: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: rgba(0,0,0,0.2);
+  font-size: 20px;
+}
+
+.phoneNo-input-wrapper {
+  position: relative;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.phoneNo-input-wrapper input {
+  width: 100%;
+  padding-left: 35px; /* Make room for the icon */
+}
+
+.phoneNo-toggle-icon {
+  position: absolute;
+  top: 47%;
+  left: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: rgba(0,0,0,0.2);
+  font-size: 20px;
+}
+.phoneNo-toggle-icon.svg{
+  color: rgba(0,0,0,0.5);
+}
+.or span.line{
+  display: block;
+  width: 35%;
+  height: 1px;
+  background: rgba(0,0,0,0.2);
+}
+.or span.txt{
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 16px;
+color: rgba(0,0,0,0.5);
+font-weight: 500;
+width: 50px;
+height: 50px;
+border: 1px solid rgba(0,0,0,0.2);
+border-radius: 50%;
+}
+.google{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.google button{
+  background: transparent !important;
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 0px !important;
+  border-radius: 30px;
+}
+.google span.icon{
+  font-size: 30px;
+}
+.font-weight-normal {
+  font-weight: 600 !important;
+}
+.containers {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  min-height: 618px;
+}
+
+.form-containers {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in-containers {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-up-containers {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containers.right-panel-active .sign-in-containers {
+  transform: translateX(100%);
+}
+
+.containers.right-panel-active .sign-up-containers {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+@keyframes show {
+  0%,
+  49.99% {
+      opacity: 0;
+      z-index: 1;
+  }
+
+  50%,
+  100% {
+      opacity: 1;
+      z-index: 5;
+  }
+}
+
+
+
+.overlay-containers {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.containers.right-panel-active .overlay-containers {
+  transform: translateX(-100%);
+}
+
+.overlay {
+  background: #ffc107;
+  background: -webkit-linear-gradient(to right, #ffc107, #ffc107);
+  background: linear-gradient(to right, #ffc107, #ffc107);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #ffffff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.containers.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+.containers.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.containers.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
+        /* Responsive Adjustments */
+        /* For tablets and larger devices */
+        @media (min-width: 768px) {
+          .inputField input,
+          .password-input-wrapper,
+          .email-input-wrapper,
+          .firstlastName-input-wrapper,
+          .phoneNo-input-wrapper {
+              width: 300px; /* Adjust width for tablets */
+          }
+          #signup {
+              width: 250px; /* Adjust button width for tablets */
+          }
+      }
+      /* For desktops and larger devices */
+      @media (min-width: 1024px) {
+          .inputField input,
+          .password-input-wrapper,
+          .email-input-wrapper,
+          .firstlastName-input-wrapper,
+          .phoneNo-input-wrapper {
+              width: 400px; /* Adjust width for desktops */
+          }
+          #signup {
+              width: 350px; /* Adjust button width for desktops */
+          }
+      }
+      /* For large desktops */
+      @media (min-width: 1200px) {
+          .inputField input,
+          .password-input-wrapper,
+          .email-input-wrapper,
+          .firstlastName-input-wrapper,
+          .phoneNo-input-wrapper {
+              width: 450px; /* Adjust width for large desktops */
+          }
+          #signup {
+              width: 400px; /* Adjust button width for large desktops */
+          }
+      }
+      /* For mobile devices */
+      @media (max-width: 767px) {
+          .inputField,
+          .password-input-wrapper,
+          .email-input-wrapper,
+          .firstlastName-input-wrapper,
+          .phoneNo-input-wrapper {
+              flex-direction: column;
+              align-items: stretch;
+          }
+          .overlay-containers {
+              display: none; /* Hide the overlay on small screens for simplicity */
+          }
+          .sign-in-containers {
+              width: 100%; /* Full width on mobile */
+          }
+          .sign-up-containers {
+            width: 35%; /* Full width on mobile */
+        }
+          .inputField input,
+          .password-input-wrapper input,
+          .email-input-wrapper input,
+          .firstlastName-input-wrapper input,
+          .phoneNo-input-wrapper input {
+              padding: 12px; /* Adjust padding for touchscreens */
+          }
+          .font-weight-normal {
+              font-weight: 400; /* Adjust font weight for better readability */
+          }
+      }
+      /* For tablets and larger devices */
+      @media (min-width: 768px) {
+          .font-weight-normal {
+              font-weight: 600; /* Maintain original font weight */
+          }
+      }
