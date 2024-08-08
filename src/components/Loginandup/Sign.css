@@ -370,13 +370,7 @@ border-radius: 50%;
           .sign-up-containers {
             width: 35%; /* Full width on mobile */
         }
-          .inputField input,
-          .password-input-wrapper input,
-          .email-input-wrapper input,
-          .firstlastName-input-wrapper input,
-          .phoneNo-input-wrapper input {
-              padding: 12px; /* Adjust padding for touchscreens */
-          }
+        
           .font-weight-normal {
               font-weight: 400; /* Adjust font weight for better readability */
           }

@@ -73,7 +73,7 @@ export default function Header() {
                 </span>
               </a>
             </div>
-            <div className="col-sm-3 d-flex align-items-center">
+            <div className="col-sm-3 d-flex align-items-center justify-content-center">
               <Button className="rounded-circle mr-3" onClick={()=>setisToggleSidebr(!isToggleSidebr)}>
                 {
                   isToggleSidebr === false ? <MdMenuOpen /> : <MdOutlineMenu/>
@@ -81,102 +81,11 @@ export default function Header() {
               </Button>
               <Search />
             </div>
-            <div className="col-sm-7 d-flex align-items-center justify-content-end">
+            <div className="col-sm-7 d-flex align-items-center justify-content-md-end mt-2 mt-md-0">
               <Button className="rounded-circle mr-3" onClick={()=>setThemeMode(!themeMode)}>
                 <MdOutlineLightMode />
               </Button>
-              <Button className="rounded-circle mr-3">
-                <IoCartOutline />{" "}
-              </Button>
-              <Button className="rounded-circle mr-3">
-                <MdOutlineMailOutline />{" "}
-              </Button>
-              <div className="notication position-relative">
-              <Button className="rounded-circle mr-3" onClick={OpenNotification}>
-                <FaRegBell />{" "}
-              </Button>
-              <Menu
-                isOpenNotification={isOpenNotification}
-                className="dropdown_list"
-                id="Notication-menu"
-                open={openNotification}
-                onClose={closeNotication}
-                onClick={closeNotication}
-                PaperProps={{
-                    elevation: 0,
-                    sx: {
-                      overflow: 'visible',
-                      filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-                      mt: 1,
-                      '& .MuiAvatar-root': {
-                        width: 32,
-                        height: 32,
-                        ml: -0.5,
-                        mr: 1,
-                      },
-                      '&::before': {
-                        content: '""',
-                        display: 'block',
-                        position: 'absolute',
-                        top: 0,
-                        right: 14,
-                        width: 10,
-                        height: 10,
-                        bgcolor: 'background.paper',
-                        transform: 'translateY(-50%) rotate(45deg)',
-                        zIndex: 0,
-                      },
-                    },
-                  }}
-                transformOrigin={{ horizontal: "right", vertical: "top" }}
-                anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
-              >
-                <div className="head pl-3 ">
-                    <h4>Notication </h4>
-                </div>
-                <Divider/>
-                <div className="scroll">
-                {
-                  Notification_data.map((items, index)=>{
-                    return(
-                      <>
-                     <MenuItem onClick={closeNotication} key={index}>
-                   <div className="d-flex align-items-center justify-content-center">
-                      <div>
-                         <div className="user-img">
-                    <span className="rounded-circle">
-                      <img
-                        src={items.images}
-                        alt=""
-                      />
-                    </span>
-                         </div>
-                      </div>
-                      <div className="Dropdowninfo">
-                         <h4>
-                            {items.description}
-                         </h4>
-                         <p className="text-sky mb-0">
-                            few second ago
-                         </p>
-                      </div>
-                      <div className="icon">
-                         <BsThreeDotsVertical/>
-                      </div>
-                   </div>
-                </MenuItem>
-                    </>
-                    )
-                  })
-                }
-                </div>
-                <div className="btnn">
-                    <Button className="btn-blue w-100 ">
-                          view All Notification
-                    </Button>
-                </div>
-              </Menu>
-              </div>
+           
               {
                 isLogin !== true ? <Link to='/signin'><Button className="btn-blue">Sign in</Button></Link> :
                  <>
@@ -250,10 +159,9 @@ export default function Header() {
               </Menu>
                  </>
               }
-             
+             </div>
             </div>
           </div>
-        </div>
       </header>
     </>
   );

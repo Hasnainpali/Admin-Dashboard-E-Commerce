@@ -79,7 +79,7 @@ fetchDataFormApi(`/api/products?page=${value}`).then((res) => {
            <Breadcrumb label="DashBoard" icon={<HomeIcon fontSize="small" />} />
         </div>
         <div className="row dashboardWrapperBox">
-          <div className="col-md-8">
+          <div className="col-md-12">
             <div className="dashboardWrapper  d-flex flex-wrap">
               <DashboardBox
                 title="Total Users"
@@ -107,7 +107,7 @@ fetchDataFormApi(`/api/products?page=${value}`).then((res) => {
               />
             </div>
           </div>
-          <div className="col-md-4 pl-0">
+          {/* <div className="col-md-4 mt-2 mt-md-0 d-none ">
             <div className="box graphBox">
               <div className="d-flex align-items-center bottom-ele">
                 <h4 className="text-white mb-0 mt-0">Last month</h4>
@@ -150,7 +150,7 @@ fetchDataFormApi(`/api/products?page=${value}`).then((res) => {
               </h3>
               <p> $3,787,681.00 in last month</p>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="card shadow border-0 p-3 mt-4">
