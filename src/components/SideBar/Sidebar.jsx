@@ -75,7 +75,7 @@ function Sidebar() {
                   : "collapse"
               }`}
             >
-              <ul className="submenu">
+              <ul className="submenu mt-2">
                 <li>
                   <Link to="/Product-list">Product List</Link>
                 </li>
@@ -109,7 +109,7 @@ function Sidebar() {
                   : "collapse"
               }`}
             >
-              <ul className="submenu">
+              <ul className="submenu mt-2">
                 <li>
                   <Link to="/Category-list">Category List</Link>
                 </li>
@@ -137,52 +137,34 @@ function Sidebar() {
             </Link>
           </li>
           <li>
+            
               <Button
                 className={`w-100 ${activeTab === 4 ? "active" : ""}`}
                 onClick={() => isOpenSubMenu(4)}
               >
                 <span className="icon">
                   {" "}
-                  <MdMessage />{" "}
-                </span>
-                Message
-                {/* <span className="arrow">
-                  <FaAngleRight />
-                </span> */}
-              </Button>
-           
-          </li>
-          <li>
-              <Button
-                className={`w-100 ${activeTab === 5 ? "active" : ""}`}
-                onClick={() => isOpenSubMenu(5)}
-              >
-                <span className="icon">
-                  {" "}
-                  <FaBell />{" "}
-                </span>
-                Notification
-                {/* <span className="arrow">
-                  <FaAngleRight />
-                </span> */}
-              </Button>
-           
-          </li>
-          <li>
-            
-              <Button
-                className={`w-100 ${activeTab === 6 ? "active" : ""}`}
-                onClick={() => isOpenSubMenu(6)}
-              >
-                <span className="icon">
-                  {" "}
                   <IoIosSettings />{" "}
                 </span>
                 Setting
-                {/* <span className="arrow">
+                <span className="arrow">
                   <FaAngleRight />
-                </span> */}
+                </span>
               </Button>
+              <div
+              className={`submenuWrapper ${
+                activeTab === 4 && isToggleSubmenu ===true
+                  ? "collapsed"
+                  : "collapse"
+              }`}
+            >
+              <ul className="submenu mt-2">
+                <li>
+                  <Link to="/My-Account">MY Account</Link>
+                </li>
+                
+              </ul>
+            </div>
             
           </li>
         </ul>

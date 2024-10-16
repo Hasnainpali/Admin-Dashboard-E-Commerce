@@ -168,7 +168,7 @@ export default function ProductList() {
           </div> */}
 
           <div className="table-responsive mt-3 ">
-             <table className="table table-bordered  v-align">
+             <table className="table table-bordered v-align">
              <thead className="thead-dark">
                 <tr>
                   <th>ID</th>
