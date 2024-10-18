@@ -93,7 +93,7 @@ export default function Header() {
                 <div className="MyAcc d-flex align-items-center">
                   <div className="user-img">
                     <span className="rounded-circle">
-                      {user.name.charAt(0)}
+                      {user.name?.charAt(0)}
                     </span>
                   </div>
                   <div className="user-info ">
@@ -138,18 +138,20 @@ export default function Header() {
                 transformOrigin={{ horizontal: "right", vertical: "top" }}
                 anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
               >
-                <MenuItem onClick={closeMyAccdrop}>
+                <MenuItem className="text-center" >
+                <Link to={'/My-Account'} className="d-flex" style={{color:"#000000"}}>
                   <ListItemIcon>
                     <PersonAdd />
                   </ListItemIcon>
-                  My Account
+                  <span className="">  My Account</span>
+                  </Link>
                 </MenuItem>
-                <MenuItem onClick={closeMyAccdrop}>
+                {/* <MenuItem onClick={closeMyAccdrop}>
                   <ListItemIcon>
                     <IoShieldHalfSharp />
                   </ListItemIcon>
                   Reset Password
-                </MenuItem>
+                </MenuItem> */}
                 <MenuItem onClick={logout}>
                   <ListItemIcon>
                     <Logout />

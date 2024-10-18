@@ -14,7 +14,8 @@ export const UserProvide = ({children}) =>{
     });
     const [user,setUser] = useState({
         name:"",
-        email:""
+        email:"",
+        phone:"",
     })
     const BaseURl = "https://full-stack-ecommerce-server.vercel.app"
 

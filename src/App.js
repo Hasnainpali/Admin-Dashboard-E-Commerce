@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { json, Route, Routes } from "react-router-dom";
+import {  Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Header from "./components/Header/Header";
@@ -19,6 +19,7 @@ import LoadingBar from 'react-top-loading-bar'
 import CategoryEdit from "./components/Category/CategoryEdit";
 import ProductEdit from "./components/Products/ProductEdit";
 import OrderList from "./components/Order/OrderList";
+import MyAccount from "./components/MyAccount/MyAccount";
 
 function App() {
   const { isToggleSidebr, themeMode } = useContext(SidebarContext);
@@ -109,6 +110,7 @@ function App() {
             <Route path="/Edited-Category/:id" exact element={<CategoryEdit />} />
             <Route path="/Category-list" exact element={<CategoryList />} />
             <Route path="/Order-list" exact element={<OrderList />} />
+            <Route path="/My-Account" exact element={<MyAccount/>} />
           </Routes>
         </div>
       </div>

@@ -67,6 +67,7 @@ export default function Signin() {
           userId: res.user?.id,
           name: res.user?.name,
           email: res.user?.email,
+          phone: res.user?.phone,
         };
         localStorage.setItem("user", JSON.stringify(user));
 
