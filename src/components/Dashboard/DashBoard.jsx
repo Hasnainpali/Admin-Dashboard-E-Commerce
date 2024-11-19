@@ -27,7 +27,9 @@ export default function DashBoard() {
   const [categoryBy, setcategoryBy] = useState("");
   const [brandBy, setbrandBy] = useState("");
   const [priceBy, setpriceBy] = useState("");
-  const [productList, setProductList] = useState([])
+  const [productList, setProductList] = useState([]);
+  const [totalProduct , setTotalProduct] = useState(0);
+  const [totalOrder , setTotalOrder] = useState(0);
 
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -43,7 +45,11 @@ export default function DashBoard() {
     setProgress(40)
     fetchDataFormApi(`/api/products`).then((res)=>{
       setProductList(res)
+      setTotalProduct(res.totalPosts)
       setProgress(100)
+    });
+    fetchDataFormApi(`/api/order`).then((res)=>{
+      setTotalOrder(res.totalPosts)
     })
   },[]);
 
@@ -58,6 +64,7 @@ deletedata(`/api/products/${id}`).then((res) =>{
   })
   fetchDataFormApi(`/api/products`).then((res)=>{
     setProductList(res)
+    setTotalProduct(res.totalPosts)
   })
 })
 };
@@ -81,30 +88,32 @@ fetchDataFormApi(`/api/products?page=${value}`).then((res) => {
         <div className="row dashboardWrapperBox">
           <div className="col-md-12">
             <div className="dashboardWrapper  d-flex flex-wrap">
-              <DashboardBox
+              {/* <DashboardBox
                 title="Total Users"
                 color={["#1da256", "#48d483"]}
                 icon={<FaUserCircle />}
                 grow={<TrendingUp />}
-              />
+              /> */}
               <DashboardBox
                 title="Total Orders"
                 color={["#c012e2", "#eb64fe"]}
                 icon={<IoMdCart />}
                 grow={<TrendingDown />}
+                value={totalOrder}
               />
               <DashboardBox
                 title="Total Products"
                 color={["#2c78e5", "#60aff5"]}
                 icon={<MdShoppingBag />}
                 grow={<TrendingUp />}
+                value={totalProduct}
               />
-              <DashboardBox
+              {/* <DashboardBox
                 title="Total Reviews"
                 color={["#e1950e", "#f3cd29"]}
                 icon={<GiStarsStack />}
                 grow={<TrendingUp />}
-              />
+              /> */}
             </div>
           </div>
           {/* <div className="col-md-4 mt-2 mt-md-0 d-none ">

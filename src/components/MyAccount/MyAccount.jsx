@@ -160,7 +160,7 @@ export default function MyAccount() {
                 aria-label="basic tabs example"
               >
                 <Tab label="Edit Profile" {...a11yProps(0)} />
-                <Tab label="Change Password" {...a11yProps(1)} />
+                {/* <Tab label="Change Password" {...a11yProps(1)} /> */}
               </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>

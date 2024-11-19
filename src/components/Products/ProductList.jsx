@@ -27,7 +27,9 @@ export default function ProductList() {
     const [categoryBy, setcategoryBy] = useState("");
     const [categoryData, setcategoryData] = useState([]);
     const [productList, setProductList] = useState([])
-    const [page ,setPage] = useState(1)
+    const [page ,setPage] = useState(1);
+    const [totalProduct , setTotalProduct] = useState(0);
+     const [totalOrder , setTotalOrder] = useState(0);
   
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -43,7 +45,11 @@ export default function ProductList() {
           setProgress(40)
           fetchDataFormApi(`/api/products`).then((res)=>{
             setProductList(res)
+            setTotalProduct(res.totalPosts)
             setProgress(100)
+          });
+          fetchDataFormApi(`/api/order`).then((res)=>{
+            setTotalOrder(res.totalPosts)
           })
     },[]);
 
@@ -99,22 +105,18 @@ export default function ProductList() {
           <div className="col-md-12">
             <div className="dashboardWrapper d-flex">
               <DashboardBox
-                title="Total Users"
-                color={["#1da256", "#48d483"]}
-                icon={<FaUserCircle />}
-                grow={<TrendingUp />}
-              />
-              <DashboardBox
                 title="Total Orders"
                 color={["#c012e2", "#eb64fe"]}
                 icon={<IoMdCart />}
                 grow={<TrendingDown />}
+                value={totalOrder}
               />
               <DashboardBox
                 title="Total Products"
                 color={["#2c78e5", "#60aff5"]}
                 icon={<MdShoppingBag />}
                 grow={<TrendingUp />}
+                value={totalProduct}
               />
             </div>
           </div>

@@ -27,7 +27,7 @@ function DashboardBox(props) {
       <div className="d-flex w-100">
         <div className="col1">
           <h4 className="text-white mb-0">{props.title}</h4>
-          <span className="text-white">277</span>
+          <span className="text-white">{props.value}</span>
         </div>
         <div className="ml-auto">
           <span className="icon">{props.icon}</span>
